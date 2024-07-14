@@ -1,0 +1,27 @@
+{
+    "name": "karl-harris/customer-utilities",
+    "description": "Customer utilities",
+    "type": "shopware-platform-plugin",
+    "version": "1.0.0",
+    "license": "MIT",
+    "require": {
+        "shopware/core": "6.5.*"
+    },
+    "extra": {
+        "shopware-plugin-class": "KarlHarris\\CustomerUtilities",
+        "label": {
+            "de-DE": "Customer utilities",
+            "en-GB": "Customer utilities"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "KarlHarris\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "KarlHarris\\Tests\\": "tests/"
+        }
+    }
+}

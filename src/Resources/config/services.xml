@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service id="KarlHarris\Command\CustomerCleanUpCommand">
+            <argument type="service" id="KarlHarris\Service\CustomerIteratorService" />
+            <argument type="service" id="KarlHarris\Service\CustomerActionService" />
+            <tag name="console.command"/>
+        </service>
+
+        <service id="KarlHarris\Service\CustomerIteratorService" public="true">
+            <argument type="service" id="customer.repository" />
+        </service>
+
+        <service id="KarlHarris\Service\CustomerActionService" public="true">
+            <argument type="service" id="customer.repository" />
+        </service>
+
+        <service id="KarlHarris\ScheduledTask\CustomerCleanUpTask">
+            <tag name="shopware.scheduled.task"/>
+        </service>
+
+        <service id="KarlHarris\ScheduledTask\CustomerCleanUpHandler">
+            <argument type="service" id="scheduled_task.repository"/>
+            <argument type="service" id="logger"/>
+            <argument type="service" id="KarlHarris\Service\CustomerIteratorService" />
+            <argument type="service" id="KarlHarris\Service\CustomerActionService" />
+            <tag name="messenger.message_handler"/>
+        </service>
+
+    </services>
+</container>
