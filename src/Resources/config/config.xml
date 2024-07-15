@@ -5,6 +5,13 @@
         <title>Scheduled task config</title>
         <title lang="de-DE">Scheduled task config</title>
 
+        <input-field type="bool">
+            <name>cuShouldRun</name>
+            <label>Active</label>
+            <label lang="de-DE">Aktiv</label>
+            <defaultValue>false</defaultValue>
+        </input-field>
+
         <input-field type="int">
             <name>cuCustomersOlderThanDays</name>
             <label>Delete customers older than (days)</label>

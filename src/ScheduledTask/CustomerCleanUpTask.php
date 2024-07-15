@@ -3,6 +3,7 @@
 namespace KarlHarris\ScheduledTask;
 
 use Shopware\Core\Framework\MessageQueue\ScheduledTask\ScheduledTask;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
 class CustomerCleanUpTask extends ScheduledTask
 {
@@ -14,5 +15,10 @@ class CustomerCleanUpTask extends ScheduledTask
     public static function getDefaultInterval(): int
     {
         return 60;
+    }
+
+    public static function shouldRun(ParameterBagInterface $bag): bool
+    {
+        return (bool) $bag->get('CustomerUtilities.config.cuShouldRun');
     }
 }
