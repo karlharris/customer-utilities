@@ -19,6 +19,7 @@ class CustomerCleanUpTask extends ScheduledTask
 
     public static function shouldRun(ParameterBagInterface $bag): bool
     {
+        /** TODO: Test! */
         return (bool) $bag->get('CustomerUtilities.config.cuShouldRun');
     }
 }
