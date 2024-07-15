@@ -29,6 +29,7 @@
             <argument type="service" id="logger"/>
             <argument type="service" id="KarlHarris\Service\CustomerIteratorService" />
             <argument type="service" id="KarlHarris\Service\CustomerActionService" />
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService" />
             <tag name="messenger.message_handler"/>
         </service>
 
