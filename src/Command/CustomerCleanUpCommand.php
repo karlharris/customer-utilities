@@ -32,7 +32,7 @@ class CustomerCleanUpCommand extends Command
         $io->title('Customer clean up');
         $context = Context::createDefaultContext();
 
-        $iterator = $this->customerIterator->getActiveCustomersWithoutOrders($context);
+        $iterator = $this->customerIterator->getAllActiveCustomersWithoutOrders($context);
 
         if (0 >= $iterator->getTotal()) {
             $io->info('Nothing to do!');
