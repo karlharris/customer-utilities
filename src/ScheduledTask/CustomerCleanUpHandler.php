@@ -40,7 +40,7 @@ final class CustomerCleanUpHandler extends ScheduledTaskHandler
         }
 
         foreach ($iterator->fetchIds() as $customerId) {
-            $this->customerAction->deleteCustomer($customerId, $context);
+            $this->customerAction->delete($customerId, $context);
         }
     }
 }

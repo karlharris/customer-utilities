@@ -43,7 +43,7 @@ class CustomerCleanUpCommand extends Command
         $io->progressStart($iterator->getTotal());
 
         foreach ($iterator->fetchIds() as $customerId) {
-            $this->customerAction->deleteCustomer($customerId, $context);
+            $this->customerAction->delete($customerId, $context);
             $io->progressAdvance();
         }
 

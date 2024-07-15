@@ -16,7 +16,7 @@ class CustomerActionService
     ) {
     }
 
-    public function deleteCustomer(string $id, Context $context): void
+    public function delete(string $id, Context $context): void
     {
         try {
             $this->customerRepo->delete([['id' => $id]], $context);
